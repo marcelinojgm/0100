@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Class BallDemo - a short demonstration showing animation with the 
@@ -28,15 +29,16 @@ public class BallDemo
     public void bounce(int n)
     {
         int ground = 400;   // position of the ground line
-
+        
         myCanvas.setVisible(true);
-
+        Random random = new Random();
         // draw the ground
         myCanvas.drawLine(50, ground, 550, ground);
         ArrayList<BouncingBall> balls = new ArrayList<>();
         // crate and show the balls
         for(int i=0; i<n; i++){
-            balls.add(new BouncingBall(50, 50, 16, Color.BLUE, ground, myCanvas));
+            
+            balls.add(new BouncingBall(random.nextInt(50), random.nextInt(50), random.nextInt(40)+10, Color.BLUE, ground, myCanvas));
         }
 
 
