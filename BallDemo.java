@@ -63,4 +63,12 @@ public class BallDemo
             }
         }
     }
+    
+    /**
+     * Este método debe dibujar un rectángulo en la pantalla y 
+     * tantas bolas como se indiquen como parámetro en la invocación del método.
+     */
+    public void boxBounce(){
+    
+    }
 }
