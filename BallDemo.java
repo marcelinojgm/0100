@@ -38,18 +38,20 @@ public class BallDemo
         for(int i=0; i<n; i++){
             balls.add(new BouncingBall(50, 50, 16, Color.BLUE, ground, myCanvas));
         }
-       
-       
+
 
         // make them bounce
         boolean finished =  false;
         while(!finished) {
-            myCanvas.wait(50);           // small delay
-            ball.move();
-            ball2.move();
-            // stop once ball has travelled a certain distance on x axis
-            if(ball.getXPosition() >= 550 || ball2.getXPosition() >= 550) {
-                finished = true;
+            for(int i=0; i<n; i++){
+                BouncingBall ball = balls.get(i);
+                myCanvas.wait(50);           // small delay
+                ball.move();
+                
+                // stop once ball has travelled a certain distance on x axis
+                if(ball.getXPosition() >= 550) {
+                    finished = true;
+                }
             }
         }
     }
