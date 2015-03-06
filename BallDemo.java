@@ -29,18 +29,23 @@ public class BallDemo
     public void bounce(int n)
     {
         int ground = 400;   // position of the ground line
-        
+
         myCanvas.setVisible(true);
         Random random = new Random();
         // draw the ground
         myCanvas.drawLine(50, ground, 550, ground);
         ArrayList<BouncingBall> balls = new ArrayList<>();
+
+        float r ;
+        float g ;
+        float b ;
         // crate and show the balls
         for(int i=0; i<n; i++){
-            
-            balls.add(new BouncingBall(random.nextInt(50), random.nextInt(50), random.nextInt(40)+10, Color.BLUE, ground, myCanvas));
+            r = random.nextFloat();
+            g = random.nextFloat();
+            b = random.nextFloat();
+            balls.add(new BouncingBall(random.nextInt(50), random.nextInt(50), random.nextInt(40)+10, new Color(r,g,b), ground, myCanvas));
         }
-
 
         // make them bounce
         boolean finished =  false;
@@ -49,7 +54,7 @@ public class BallDemo
                 BouncingBall ball = balls.get(i);
                 myCanvas.wait(50);           // small delay
                 ball.move();
-                
+
                 // stop once ball has travelled a certain distance on x axis
                 if(ball.getXPosition() >= 550) {
                     finished = true;
