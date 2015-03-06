@@ -44,11 +44,12 @@ public class BallDemo
             r = random.nextInt(255);
             g = random.nextInt(255);
             b = random.nextInt(255);
-            balls.add(new BouncingBall(random.nextInt(50), random.nextInt(50), random.nextInt(40)+10, new Color(r,g,b), ground, myCanvas));
+            balls.add(new BouncingBall(random.nextInt(250), random.nextInt(50), random.nextInt(50)+10, new Color(r,g,b), ground, myCanvas));
         }
 
         // make them bounce
         boolean finished =  false;
+        
         while(!finished) {
             for(int i=0; i<n; i++){
                 BouncingBall ball = balls.get(i);
